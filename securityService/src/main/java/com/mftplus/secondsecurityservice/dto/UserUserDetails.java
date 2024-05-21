@@ -4,17 +4,20 @@ import com.mftplus.secondsecurityservice.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.stereotype.Component;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UserDetailsInfo implements UserDetails {
+@Component
+public class UserUserDetails implements UserDetails {
     private String name;
     private String password;
     private List<GrantedAuthority> authorities;
 
-    public UserDetailsInfo(User userInfo) {
+    public UserUserDetails(User userInfo) {
         name=userInfo.getUsername();
         password=userInfo.getPassword();
         authorities= Arrays.stream(userInfo.getRoles().split(","))
