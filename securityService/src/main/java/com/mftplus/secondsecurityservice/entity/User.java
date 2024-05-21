@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -51,6 +54,8 @@ public class User extends Base {
 
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER , mappedBy = "user")
 //    private Set<Role> roleSet = new HashSet<>() ;
+
+    private String roles;
 
     @Column(name = "user_status")
     private boolean status = true;
